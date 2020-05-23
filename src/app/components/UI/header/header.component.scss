@@ -1,0 +1,21 @@
+.header {
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  font-family: 'Abel', sans-serif;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  img {
+    max-height: 30px;
+    filter: brightness(0) invert(1);
+    margin-right: 15px;
+  }
+}
