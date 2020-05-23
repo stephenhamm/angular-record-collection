@@ -1,1 +1,16 @@
-<p>record works!</p>
+<div class="container">
+  <div class="imageContainer">
+    <img [src]="record.imagePath" alt="{{ record.title }}" class="recordImage" />
+  </div>
+  <div class="info">
+    <p class="title">{{ record.title }}</p>
+    <p class="artist">{{ record.artist }}</p>
+    <p class="year">Released: {{ record.year }}</p>
+  </div>
+  <div class="additionalInfo">
+    <div class="genres">
+      <span *ngFor="let genre of record.genres">{{ genre }}</span>
+    </div>
+    <p class="recordLabel">{{ record.label }}</p>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.recordList {
+  width: 20%;
+}
+
+app-record {
+  width: 80%;
+}
