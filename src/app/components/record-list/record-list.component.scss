@@ -13,7 +13,7 @@
   height: 100%;
 }
 
-.artists {
+.records {
   list-style: none;
   font-weight: 20px;
 }
@@ -28,10 +28,4 @@ li {
 ul, li {
   margin: 0;
   padding: 0;
-}
-
-.list-group{
-  height: 100%;
-  overflow:scroll;
-  -webkit-overflow-scrolling: touch;
 }

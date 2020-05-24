@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artist-list.component.scss']
 })
 export class ArtistListComponent implements OnInit {
+  artists: string[] = ['A Day To Remember', 'The Beatles', 'Blink-182'];
 
   constructor() { }
 

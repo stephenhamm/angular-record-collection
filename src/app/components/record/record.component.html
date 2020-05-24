@@ -1,16 +1,22 @@
-<div class="container">
-  <div class="imageContainer">
-    <img [src]="record.imagePath" alt="{{ record.title }}" class="recordImage" />
-  </div>
-  <div class="info">
-    <p class="title">{{ record.title }}</p>
-    <p class="artist">{{ record.artist }}</p>
-    <p class="year">Released: {{ record.year }}</p>
-  </div>
-  <div class="additionalInfo">
-    <div class="genres">
-      <span *ngFor="let genre of record.genres">{{ genre }}</span>
+<div class="container-fluid">
+  <div class="content">
+    <div class="left">
+      <img [src]="record.imagePath" alt="{{ record.title }}" class="recordImage" />
+      <div class="buttons">
+        <button class="btn btn-secondary">Edit</button>
+        <button class="btn btn-secondary">Upload Image</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
     </div>
-    <p class="recordLabel">{{ record.label }}</p>
-  </div>
+    <div class="right">
+      <p class="title">TITLE: {{ record.title }}</p>
+      <p class="artist">ARTIST: {{ record.artist }}</p>
+      <p class="year">RELEASED: {{ record.year }}</p>
+      <div class="genres">
+        <span>GENRES: </span>
+        <span *ngFor="let genre of record.genres">{{ genre }} </span>
+      </div>
+      <p class="recordLabel">LABEL: {{ record.label }}</p>
+    </div>
+
 </div>

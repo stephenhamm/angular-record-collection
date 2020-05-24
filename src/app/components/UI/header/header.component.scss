@@ -1,11 +1,9 @@
 .header {
   height: 60px;
-  background-color: #000;
+  background-color: #545675;
   color: #fff;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   padding: 0 20px;
   font-family: 'Abel', sans-serif;
 
@@ -18,4 +16,11 @@
     filter: brightness(0) invert(1);
     margin-right: 15px;
   }
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }

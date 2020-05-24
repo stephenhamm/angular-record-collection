@@ -5,4 +5,8 @@ body {
 
 html, body {
   height: 100%;
+  background-color: #13141e !important;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
