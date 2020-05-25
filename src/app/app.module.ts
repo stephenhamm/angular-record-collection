@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { RecordComponent } from './components/record/record.component';
 import { HeaderComponent } from './components/UI/header/header.component';
 import { AddRecordComponent } from './components/add-record/add-record.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ListComponent } from './components/list/list.component';
+import { ArtistListComponent } from './components/artist-list/artist-list.component';
+import { RecordListComponent } from './components/record-list/record-list.component';
+import { ArtistComponent } from './components/artist-list/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +19,16 @@ import { ListComponent } from './components/list/list.component';
     RecordComponent,
     HeaderComponent,
     AddRecordComponent,
-    ListComponent
+    ArtistListComponent,
+    RecordListComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

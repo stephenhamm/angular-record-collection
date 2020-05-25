@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="content">
     <ul class="items list-group">
-      <li class="items" *ngFor="let item of items">{{ item }}</li>
+      <li class="items" *ngFor="let item of items | async">{{ item.title }}</li>
     </ul>
   </div>
 </div>

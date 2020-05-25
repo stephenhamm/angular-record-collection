@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "recordcollection-26ed9": {
+      "hosting": {
+        "record-collection": [
+          "recordcollection-26ed9"
+        ]
+      }
+    }
+  }
+}
