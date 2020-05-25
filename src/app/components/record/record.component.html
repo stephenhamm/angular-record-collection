@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="record">
   <div class="content">
     <div class="left">
       <img [src]="record.imagePath" alt="{{ record.title }}" class="recordImage" />
@@ -11,7 +11,7 @@
     <div class="right">
       <p class="title">TITLE: {{ record.title }}</p>
       <p class="artist">ARTIST: {{ record.artist }}</p>
-      <p class="year">RELEASED: {{ record.year }}</p>
+      <p class="year">RELEASED: {{ record.released }}</p>
       <div class="genres">
         <span>GENRES: </span>
         <span *ngFor="let genre of record.genres">{{ genre }} </span>

@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="content">
     <ul class="items list-group">
-      <li class="items" *ngFor="let item of items | async">{{ item.title }}</li>
+      <li class="items" *ngFor="let item of items">
+        <app-record-list-item [record]="item" (onRecordClicked)="onRecordClicked($event)"></app-record-list-item>
+      </li>
     </ul>
   </div>
 </div>

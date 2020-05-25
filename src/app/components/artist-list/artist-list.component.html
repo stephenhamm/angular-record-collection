@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="content">
     <ul class="items list-group">
-      <li class="items" *ngFor="let item of items | async">
+      <li class="items" *ngFor="let item of items">
         <app-artist [artist]="item" (onArtistClicked)="onArtistClicked($event)"></app-artist>
       </li>
     </ul>

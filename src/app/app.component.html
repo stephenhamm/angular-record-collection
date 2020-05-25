@@ -3,10 +3,10 @@
   <div class="app">
   <div class="left">
     <app-artist-list (onArtistChosen)="onArtistChosen($event)"></app-artist-list>
-    <app-record-list></app-record-list>
+    <app-record-list [artist]="selectedArtist" (onRecordChosen)="onRecordChosen($event)"></app-record-list>
   </div>
   <div class="right">
-    <app-record></app-record>
+    <app-record [record]="selectedRecord"></app-record>
     <app-add-record></app-add-record>
   </div>
 </div>

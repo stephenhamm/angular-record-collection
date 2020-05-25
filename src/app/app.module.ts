@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ArtistListComponent } from './components/artist-list/artist-list.component';
 import { RecordListComponent } from './components/record-list/record-list.component';
 import { ArtistComponent } from './components/artist-list/artist/artist.component';
+import { RecordListItemComponent } from './components/record-list/record-list-item/record-list-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ArtistComponent } from './components/artist-list/artist/artist.componen
     AddRecordComponent,
     ArtistListComponent,
     RecordListComponent,
-    ArtistComponent
+    ArtistComponent,
+    RecordListItemComponent
   ],
   imports: [
     BrowserModule,

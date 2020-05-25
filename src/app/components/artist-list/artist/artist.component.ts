@@ -8,7 +8,7 @@ import { Artist } from 'src/app/models/artist.model';
 })
 export class ArtistComponent implements OnInit {
  @Input() artist: Artist;
- @Output() onArtistClicked: EventEmitter<string> = new EventEmitter<string>();
+ @Output() onArtistClicked: EventEmitter<Artist> = new EventEmitter<Artist>();
 
   constructor() { }
 
@@ -16,6 +16,6 @@ export class ArtistComponent implements OnInit {
   }
 
   onArtistClick() {
-    this.onArtistClicked.emit(this.artist.name);
+    this.onArtistClicked.emit(this.artist);
   }
 }
