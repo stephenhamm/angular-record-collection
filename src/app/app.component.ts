@@ -12,12 +12,10 @@ export class AppComponent {
   public selectedRecord: Record;
 
   onArtistChosen(name: string) {
-    console.log("ARTIST CLICKED:", name);
     this.selectedArtist = name;
   }
 
   onRecordChosen(record: Record) {
-    console.log("RECORD CLICKED:", record);
     this.selectedRecord = record;
   }
 }

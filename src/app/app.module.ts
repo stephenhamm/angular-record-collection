@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireStorageModule, AngularFireStorage } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
@@ -28,9 +29,10 @@ import { RecordListItemComponent } from './components/record-list/record-list-it
   imports: [
     BrowserModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
-  providers: [AngularFireDatabase],
+  providers: [AngularFireDatabase, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

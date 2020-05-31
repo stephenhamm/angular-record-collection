@@ -1,7 +1,7 @@
 <div class="container-fluid" *ngIf="record">
   <div class="content">
     <div class="left">
-      <img [src]="record.imagePath" alt="{{ record.title }}" class="recordImage" />
+      <img [src]="imagePath" alt="{{ record.title }}" class="recordImage" />
       <div class="buttons">
         <button class="btn btn-secondary">Edit</button>
         <button class="btn btn-secondary">Upload Image</button>
@@ -18,5 +18,4 @@
       </div>
       <p class="recordLabel">LABEL: {{ record.label }}</p>
     </div>
-
 </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output,SimpleChanges, EventEmitter } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable } from 'rxjs';
 import { Record } from 'src/app/models/record.model';
 import { Artist } from 'src/app/models/artist.model';
 
@@ -24,7 +23,6 @@ export class RecordListComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.artist.currentValue) {
       this.artist = changes.artist.currentValue;
-      console.log("ARTIST RECEIVED", this.artist)
 
       this.afDatabase.list('records/', ref => ref.orderByChild('artist').equalTo(this.artist.name)).valueChanges().subscribe((list: any) => {
         this.items = list;
