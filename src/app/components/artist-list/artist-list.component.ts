@@ -1,31 +1,33 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable } from 'rxjs';
-import { Artist } from 'src/app/models/artist.model';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+
+import { Artist } from 'src/app/components/artist-list/artist.model';
+import { ArtistService } from './artist.service';
 
 @Component({
   selector: 'app-artist-list',
   templateUrl: './artist-list.component.html',
-  styleUrls: ['./artist-list.component.scss']
+  styleUrls: ['./artist-list.component.scss'],
+  providers: [ArtistService]
 })
 export class ArtistListComponent implements OnInit {
+  @Output() artistSelected: EventEmitter<Artist> = new EventEmitter<Artist>();
   items: Artist[];
-  @Output() onArtistChosen: EventEmitter<Artist> = new EventEmitter<Artist>();
-  public selectedArtist: Artist;
+  selectedArtist: Artist;
 
-  constructor(private afDatabase: AngularFireDatabase) {
-  }
+  constructor(private artistService: ArtistService) {}
 
   ngOnInit(): void {
-    this.afDatabase.list('artists/').valueChanges().subscribe((list: any) => {
+    this.artistService.getArtists().subscribe((list: any) => {
       this.items = list;
       this.selectedArtist = this.items[0];
-      this.onArtistChosen.emit(this.selectedArtist);
+      this.artistSelected.emit(this.selectedArtist);
     });
-  }
 
-  onArtistClicked(chosenArtist: Artist) {
-    this.selectedArtist = chosenArtist;
-    this.onArtistChosen.emit(this.selectedArtist);
+    this.artistService.artistSelected
+      .subscribe((artist: Artist) => {
+        this.selectedArtist = artist;
+        this.artistSelected.emit(this.selectedArtist);
+      }
+    );
   }
 }

@@ -2,8 +2,8 @@
 <div class="container-fluid">
   <div class="app">
   <div class="left">
-    <app-artist-list (onArtistChosen)="onArtistChosen($event)"></app-artist-list>
-    <app-record-list [artist]="selectedArtist" (onRecordChosen)="onRecordChosen($event)"></app-record-list>
+    <app-artist-list (artistSelected)="onArtistChosen($event)"></app-artist-list>
+    <app-record-list [artist]="selectedArtist" (recordSelected)="onRecordChosen($event)"></app-record-list>
   </div>
   <div class="right">
     <app-record [record]="selectedRecord"></app-record>

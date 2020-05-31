@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Record } from 'src/app/models/record.model';
+import { Component, OnInit, Input } from '@angular/core';
+import { Record } from 'src/app/components/record-list/record.model';
+import { RecordService } from '../record.service';
 
 @Component({
   selector: 'app-record-list-item',
@@ -8,14 +9,13 @@ import { Record } from 'src/app/models/record.model';
 })
 export class RecordListItemComponent implements OnInit {
   @Input() record: Record;
-  @Output() onRecordClicked: EventEmitter<Record> = new EventEmitter<Record>();
 
-   constructor() { }
+  constructor(private recordService: RecordService) { }
 
-   ngOnInit(): void {
-   }
+  ngOnInit(): void {
+  }
 
-   onRecordClick() {
-     this.onRecordClicked.emit(this.record);
-   }
+  onSelected() {
+    this.recordService.recordSelected.emit(this.record);
+  }
 }

@@ -1,18 +1,19 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { Record } from '../../models/record.model';
-import { Observable } from 'rxjs';
+
+import { Record } from '../record-list/record.model';
+import { RecordService } from '../record-list/record.service';
 
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
-  styleUrls: ['./record.component.scss']
+  styleUrls: ['./record.component.scss'],
+  providers: [RecordService]
 })
 export class RecordComponent implements OnInit {
   @Input() record: Record;
   public imagePath: string;
 
-  constructor(private storage: AngularFireStorage) { }
+  constructor(private recordService: RecordService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +22,7 @@ export class RecordComponent implements OnInit {
     if (!!changes.record.currentValue) {
       this.record = changes.record.currentValue;
 
-      const ref = this.storage.ref(this.record.imagePath).getDownloadURL().subscribe(params => {
+      this.recordService.getRecordArtwork(this.record.imagePath).subscribe(params => {
         this.imagePath = params;
       });
     }

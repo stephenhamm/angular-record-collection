@@ -2,7 +2,7 @@
   <div class="content">
     <ul class="items list-group">
       <li class="items" *ngFor="let item of items">
-        <app-artist [artist]="item" (onArtistClicked)="onArtistClicked($event)"></app-artist>
+        <app-artist-item [artist]="item"></app-artist-item>
       </li>
     </ul>
   </div>
