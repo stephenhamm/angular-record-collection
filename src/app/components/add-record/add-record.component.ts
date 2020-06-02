@@ -11,5 +11,4 @@ export class AddRecordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

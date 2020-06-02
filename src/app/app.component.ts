@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Record } from 'src/app/components/record-list/record.model';
 
 @Component({

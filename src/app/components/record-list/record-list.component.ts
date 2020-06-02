@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, SimpleChanges, EventEmitter } from '@angular/core';
+
 import { Record } from 'src/app/components/record-list/record.model';
 import { Artist } from 'src/app/components/artist-list/artist.model';
 import { RecordService } from './record.service';
